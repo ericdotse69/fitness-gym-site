@@ -7,12 +7,14 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-stone-50 font-sans selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="min-h-screen bg-stone-50 font-sans selection:bg-emerald-400 selection:text-emerald-950 overflow-x-hidden">
       <Navbar />
-      <Hero />
-      <Programs />
-      <Pricing />
-      <Schedule />
+      <main>
+        <Hero />
+        <Programs />
+        <Pricing />
+        <Schedule />
+      </main>
       <Footer />
     </div>
   )
