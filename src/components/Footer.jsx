@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-stone-900 to-stone-950 text-stone-300 relative overflow-hidden border-t border-stone-800/50">
+    <footer className="bg-linear-to-b from-stone-900 to-stone-950 text-stone-300 relative overflow-hidden border-t border-stone-800/50">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-600/5 rounded-full blur-3xl -z-10"></div>

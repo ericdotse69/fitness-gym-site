@@ -24,15 +24,15 @@ export default function Programs() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-stone-50 via-white to-stone-50 py-32 px-8 text-stone-800 border-t border-stone-200/50">
+    <div className="bg-linear-to-b from-stone-50 via-white to-stone-50 py-32 px-8 text-stone-800 border-t border-stone-200/50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
           <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">✦ Our Approach</span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 mt-3">
-            The X Avis <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Method</span>
+            The X Avis <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-teal-600">Method</span>
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full mt-6"></div>
+          <div className="h-1 w-20 bg-linear-to-r from-emerald-600 to-teal-600 mx-auto rounded-full mt-6"></div>
           <p className="text-stone-600 mt-6 max-w-2xl mx-auto font-light">Three pillars of transformation—strength, serenity, and endurance combined into one balanced lifestyle.</p>
         </div>
         
@@ -45,7 +45,7 @@ export default function Programs() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${prog.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-linear-to-br ${prog.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               
               {/* Card Content */}
               <div className="relative bg-white border border-stone-200/60 p-10 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-500 hover:border-emerald-300/30 group-hover:border-emerald-200">
@@ -55,7 +55,7 @@ export default function Programs() {
                 </div>
 
                 {/* Accent Bar */}
-                <div className={`absolute top-0 left-0 w-0 h-1 bg-gradient-to-r ${prog.gradient} group-hover:w-full transition-all duration-500`}></div>
+                <div className={`absolute top-0 left-0 w-0 h-1 bg-linear-to-r ${prog.gradient} group-hover:w-full transition-all duration-500`}></div>
 
                 {/* Title */}
                 <h3 className="text-2xl font-semibold mb-3 text-stone-800 group-hover:text-emerald-700 transition-colors">
@@ -68,7 +68,7 @@ export default function Programs() {
                 </p>
 
                 {/* Bottom accent */}
-                <div className="mt-6 h-1 w-12 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                <div className="mt-6 h-1 w-12 bg-linear-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
               </div>
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function Programs() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="group bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-10 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-600/30 transition-all active:scale-95">
+          <button className="group bg-linear-to-r from-emerald-600 to-teal-600 text-white px-10 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-600/30 transition-all active:scale-95">
             <span className="flex items-center gap-2">
               Explore All Programs
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

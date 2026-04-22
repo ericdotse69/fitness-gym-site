@@ -118,11 +118,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Smooth transitions */
-* {
-  @apply transition-all duration-300;
-}
-
 /* Better scrolling */
 html {
   scroll-behavior: smooth;

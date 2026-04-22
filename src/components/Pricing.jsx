@@ -30,7 +30,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-stone-100 via-white to-stone-50 py-32 px-8 text-stone-800 relative overflow-hidden">
+    <div className="bg-linear-to-b from-stone-100 via-white to-stone-50 py-32 px-8 text-stone-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-200/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-200/10 rounded-full blur-3xl -z-10"></div>
@@ -40,9 +40,9 @@ export default function Pricing() {
         <div className="text-center mb-20 animate-fade-in-up">
           <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">✦ Investment</span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 mt-3">
-            Begin Your <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Journey</span>
+            Begin Your <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-teal-600">Journey</span>
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full mt-6"></div>
+          <div className="h-1 w-20 bg-linear-to-r from-emerald-600 to-teal-600 mx-auto rounded-full mt-6"></div>
           <p className="text-stone-600 mt-6 max-w-2xl mx-auto font-light">Choose a plan that aligns with your fitness philosophy. All memberships include access to our vibrant community.</p>
         </div>
 
@@ -58,24 +58,24 @@ export default function Pricing() {
             >
               {/* Glow Effect for Featured */}
               {plan.highlight && (
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-emerald-600/20 to-teal-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               )}
 
               {/* Card */}
               <div 
                 className={`p-10 rounded-2xl backdrop-blur transition-all duration-500 relative overflow-hidden ${
                   plan.highlight 
-                    ? "bg-gradient-to-br from-emerald-900 to-teal-900 text-white shadow-2xl shadow-emerald-600/20 border border-emerald-700/50" 
+                    ? "bg-linear-to-br from-emerald-900 to-teal-900 text-white shadow-2xl shadow-emerald-600/20 border border-emerald-700/50" 
                     : "bg-white/80 border border-stone-200 hover:border-emerald-300/50 hover:shadow-xl text-stone-800 hover:bg-white"
                 }`}
               >
                 {/* Top Accent */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${plan.highlight ? 'from-emerald-400 to-teal-400' : 'from-stone-400 to-stone-300'}`}></div>
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-linear-to-r ${plan.highlight ? 'from-emerald-400 to-teal-400' : 'from-stone-400 to-stone-300'}`}></div>
 
                 {/* Badge */}
                 {plan.highlight && (
                   <div className="mb-6 inline-block">
-                    <span className="bg-gradient-to-r from-emerald-400 to-teal-400 text-emerald-950 text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full">
+                    <span className="bg-linear-to-r from-emerald-400 to-teal-400 text-emerald-950 text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full">
                       Most Popular ⭐
                     </span>
                   </div>
@@ -109,7 +109,7 @@ export default function Pricing() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center space-x-3">
                       <svg 
-                        className={`w-5 h-5 flex-shrink-0 ${plan.highlight ? "text-emerald-300" : "text-emerald-500"}`} 
+                        className={`w-5 h-5 shrink-0 ${plan.highlight ? "text-emerald-300" : "text-emerald-500"}`} 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -127,13 +127,13 @@ export default function Pricing() {
                 <button className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 active:scale-95 ${
                   plan.highlight 
                     ? "bg-white text-emerald-900 hover:bg-emerald-50 shadow-lg" 
-                    : "bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200"
+                    : "bg-linear-to-r from-emerald-50 to-teal-50 text-emerald-700 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200"
                 }`}>
                   Get Started
                 </button>
 
                 {/* Side accent */}
-                <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-1 h-20 bg-gradient-to-b ${plan.highlight ? 'from-emerald-400 to-transparent' : 'from-stone-300 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-1 h-20 bg-linear-to-b ${plan.highlight ? 'from-emerald-400 to-transparent' : 'from-stone-300 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
             </div>
           ))}

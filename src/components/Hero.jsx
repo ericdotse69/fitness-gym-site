@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <img 
         src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=2000" 
@@ -9,8 +9,8 @@ export default function Hero() {
       />
       
       {/* Premium Layered Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-stone-950/70 via-stone-900/50 to-emerald-950/60"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-950/40"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-stone-950/70 via-stone-900/50 to-emerald-950/60"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-stone-950/40"></div>
 
       {/* Animated Background Elements */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl animate-pulse"></div>
@@ -27,7 +27,7 @@ export default function Hero() {
         {/* Main Headline */}
         <h1 className="text-5xl md:text-8xl font-light text-white tracking-tight mb-6 leading-tight drop-shadow-2xl">
           The Perfect <br/>
-          <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-300 animate-float">
+          <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-teal-300 to-emerald-300 animate-float">
             Balance
           </span>
           <br/>of Iron & Stillness
@@ -40,7 +40,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="group bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
+          <button className="group bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
             <span>Start Your Journey</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

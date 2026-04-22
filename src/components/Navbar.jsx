@@ -20,9 +20,9 @@ export default function Navbar() {
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300"></span>
         </li>
       </ul>
-      <button className="group relative bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-2.5 px-8 rounded-full font-semibold overflow-hidden hover:shadow-lg hover:shadow-emerald-400/30 active:scale-95">
+      <button className="group relative bg-linear-to-r from-emerald-600 to-emerald-700 text-white py-2.5 px-8 rounded-full font-semibold overflow-hidden hover:shadow-lg hover:shadow-emerald-400/30 active:scale-95">
         <span className="relative z-10">Begin Journey</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+        <span className="absolute inset-0 bg-linear-to-r from-emerald-700 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
       </button>
     </nav>
   )
