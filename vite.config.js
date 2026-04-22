@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/fitness-gym-site/',
   plugins: [react()],
   build: {
-    sourcemap: false
+    sourcemap: false,
+    outDir: 'docs'
   }
 })
