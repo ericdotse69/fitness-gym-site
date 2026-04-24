@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="text-3xl tracking-widest text-emerald-500 uppercase mb-6 font-bold">
-              <span>✦ X Avis</span> <span className="font-light text-stone-400">Body</span>
+              <span>X Avis</span> <span className="font-light text-stone-400">Body</span>
             </div>
             <p className="text-sm leading-relaxed text-stone-400 max-w-sm mb-6 font-light">
               Forging absolute strength and cultivating total mental clarity through the perfect balance of iron and stillness. Join 500+ members building a better version of themselves.
@@ -35,11 +35,11 @@ export default function Footer() {
           <div>
             <h4 className="text-stone-200 font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Home</a></li>
-              <li><a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Programs</a></li>
-              <li><a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Pricing</a></li>
-              <li><a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Schedule</a></li>
-              <li><a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">About Us</a></li>
+              <li><a href="/fitness-gym-site/" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Home</a></li>
+              <li><a href="/fitness-gym-site/programs" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Programs</a></li>
+              <li><a href="/fitness-gym-site/pricing" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Pricing</a></li>
+              <li><a href="/fitness-gym-site/schedule" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Schedule</a></li>
+              <li><a href="/fitness-gym-site/contact" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Contact</a></li>
             </ul>
           </div>
 
@@ -48,16 +48,16 @@ export default function Footer() {
             <h4 className="text-stone-200 font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
             <div className="space-y-4 text-sm">
               <div>
-                <p className="text-stone-400 font-light">📍 Location</p>
-                <p className="text-stone-300 mt-1">124 Zen Peak Road<br/>Accra, Greater Accra<br/>Ghana</p>
+                <p className="text-stone-400 font-light">Location</p>
+                <p className="text-stone-300 mt-1">Taysec Gardens<br/>Opposite MTN Headquarters<br/>Accra, Ghana</p>
               </div>
               <div>
-                <p className="text-stone-400 font-light">📧 Email</p>
-                <a href="mailto:hello@xavisbody.com" className="text-emerald-400 hover:text-emerald-300 transition-colors">hello@xavisbody.com</a>
+                <p className="text-stone-400 font-light">Email</p>
+                <a href="mailto:taysecgardens@gmail.com" className="text-emerald-400 hover:text-emerald-300 transition-colors">taysecgardens@gmail.com</a>
               </div>
               <div>
-                <p className="text-stone-400 font-light">📱 Phone</p>
-                <a href="tel:+233551234567" className="text-emerald-400 hover:text-emerald-300 transition-colors">+233 55 123 4567</a>
+                <p className="text-stone-400 font-light">Phone</p>
+                <a href="tel:+233208921563" className="text-emerald-400 hover:text-emerald-300 transition-colors">+233 208 921 563</a>
               </div>
             </div>
           </div>
@@ -66,14 +66,14 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <p>&copy; 2026 X Avis Body. All rights reserved. Built with 💪 and 🧘</p>
+            <p>&copy; 2026 X Avis Body. All rights reserved.</p>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+            <a href="/fitness-gym-site/privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
             <span className="text-stone-700">•</span>
-            <a href="#" className="hover:text-emerald-400 transition-colors">Terms of Service</a>
+            <a href="/fitness-gym-site/terms" className="hover:text-emerald-400 transition-colors">Terms of Service</a>
             <span className="text-stone-700">•</span>
-            <a href="#" className="hover:text-emerald-400 transition-colors">Cookie Policy</a>
+            <a href="/fitness-gym-site/cookies" className="hover:text-emerald-400 transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>

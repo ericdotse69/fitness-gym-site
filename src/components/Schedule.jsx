@@ -1,11 +1,13 @@
+import { FaWind } from "react-icons/fa";
+import { IoIosFitness } from "react-icons/io";
 export default function Schedule() {
   const classes = [
-    { day: "Monday", time: "06:00 AM", name: "Iron Foundation", type: "Strength", style: "from-amber-500 to-orange-600", icon: "🏋️" },
-    { day: "Tuesday", time: "07:00 AM", name: "Sunrise Mobility & Breath", type: "Zen", style: "from-emerald-500 to-teal-600", icon: "🧘" },
-    { day: "Wednesday", time: "05:30 PM", name: "Trail Conditioning", type: "Outdoors", style: "from-slate-600 to-stone-700", icon: "🏃" },
-    { day: "Thursday", time: "06:00 AM", name: "Powerlifting Core", type: "Strength", style: "from-amber-500 to-orange-600", icon: "💪" },
-    { day: "Friday", time: "06:00 PM", name: "Dusk Flow Yoga", type: "Zen", style: "from-emerald-500 to-teal-600", icon: "🌙" },
-    { day: "Saturday", time: "08:00 AM", name: "The Hybrid Peak (Hike + Calisthenics)", type: "Endurance", style: "from-purple-600 to-pink-600", icon: "⚡" },
+    { day: "Monday", time: "06:00 AM", name: "Iron Foundation", type: "Strength", style: "from-amber-500 to-orange-600", icon: <IoIosFitness /> },
+    { day: "Tuesday", time: "07:00 AM", name: "Sunrise Mobility & Breath", type: "Zen", style: "from-emerald-500 to-teal-600", icon: <IoIosFitness /> },
+    { day: "Wednesday", time: "05:30 PM", name: "Trail Conditioning", type: "Outdoors", style: "from-slate-600 to-stone-700", icon: <IoIosFitness /> },
+    { day: "Thursday", time: "06:00 AM", name: "Powerlifting Core", type: "Strength", style: "from-amber-500 to-orange-600", icon: <IoIosFitness /> },
+    { day: "Friday", time: "06:00 PM", name: "Dusk Flow Yoga", type: "Zen", style: "from-emerald-500 to-teal-600", icon: <IoIosFitness /> },
+    { day: "Saturday", time: "08:00 AM", name: "The Hybrid Peak (Hike + Calisthenics)", type: "Endurance", style: "from-purple-600 to-pink-600", icon: <FaWind /> },
   ];
 
   return (
@@ -13,7 +15,7 @@ export default function Schedule() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">✦ Your Week</span>
+          <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">Your Weekly Schedule</span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 mt-3">
             Weekly <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-teal-600">Rhythm</span>
           </h2>
@@ -78,12 +80,12 @@ export default function Schedule() {
           <p className="text-stone-700 mb-8 max-w-xl mx-auto font-light">
             Choose your membership plan and get access to all our classes starting today.
           </p>
-          <button className="group inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-10 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-600/30 transition-all active:scale-95">
+          <a href="/fitness-gym-site/pricing" className="group inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-10 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-600/30 transition-all active:scale-95">
             View Pricing Plans
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </div>

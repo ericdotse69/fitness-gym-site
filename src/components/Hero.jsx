@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <img 
         src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=2000" 
@@ -20,7 +20,7 @@ export default function Hero() {
         {/* Pre-headline */}
         <div className="mb-6 inline-block">
           <span className="text-emerald-400 font-semibold text-sm md:text-base uppercase tracking-[3px] animate-fade-in-down">
-            ✦ Strength + Serenity
+            Strength + Serenity
           </span>
         </div>
 
@@ -40,15 +40,15 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="group bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
+          <a href="/fitness-gym-site/pricing" className="group bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
             <span>Start Your Journey</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
-          <button className="glass text-white py-4 px-10 rounded-full text-lg font-semibold hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all hover:border-white/40">
+          </a>
+          <a href="/fitness-gym-site/programs" className="glass text-white py-4 px-10 rounded-full text-lg font-semibold hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all hover:border-white/40">
             Learn More
-          </button>
+          </a>
         </div>
 
         {/* Stats Section */}

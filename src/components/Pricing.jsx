@@ -1,31 +1,30 @@
+import { Link } from 'react-router-dom'
+
 export default function Pricing() {
   const plans = [
     {
       name: "The Iron Pass",
-      price: "$60",
+      price: "₵299",
       period: "/month",
       desc: "Perfect for serious lifters focused on strength building.",
       features: ["24/7 Gym Access", "Powerlifting Platforms", "Locker Room Access", "Equipment Support"],
-      highlight: false,
-      icon: "🔥"
+      highlight: false
     },
     {
       name: "The Hybrid Method",
-      price: "$120",
+      price: "₵599",
       period: "/month",
       desc: "The ultimate 50/50 balance. Everything you need.",
       features: ["24/7 Gym Access", "All Zen & Mobility Classes", "Guided Nature Hikes", "1-on-1 Monthly Assessment", "Priority Class Booking"],
-      highlight: true,
-      icon: "⚡"
+      highlight: true
     },
     {
       name: "The Zen Pass",
-      price: "$75",
+      price: "₵375",
       period: "/month",
       desc: "Mindfulness and recovery focused.",
       features: ["All Zen & Mobility Classes", "Guided Nature Hikes", "Breathwork Workshops", "Meditation Sessions"],
-      highlight: false,
-      icon: "🌿"
+      highlight: false
     }
   ];
 
@@ -38,7 +37,7 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">✦ Investment</span>
+          <span className="text-emerald-600 font-semibold text-sm uppercase tracking-[2px]">Investment</span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 mt-3">
             Begin Your <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-teal-600">Journey</span>
           </h2>
@@ -76,13 +75,10 @@ export default function Pricing() {
                 {plan.highlight && (
                   <div className="mb-6 inline-block">
                     <span className="bg-linear-to-r from-emerald-400 to-teal-400 text-emerald-950 text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full">
-                      Most Popular ⭐
+                      Most Popular
                     </span>
                   </div>
                 )}
-
-                {/* Icon */}
-                <div className="text-4xl mb-4">{plan.icon}</div>
 
                 {/* Plan Name */}
                 <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-stone-800'}`}>
@@ -124,13 +120,13 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 active:scale-95 ${
+                <Link to="/fitness-gym-site/join" className={`block w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 active:scale-95 text-center ${
                   plan.highlight 
                     ? "bg-white text-emerald-900 hover:bg-emerald-50 shadow-lg" 
                     : "bg-linear-to-r from-emerald-50 to-teal-50 text-emerald-700 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200"
                 }`}>
                   Get Started
-                </button>
+                </Link>
 
                 {/* Side accent */}
                 <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-1 h-20 bg-linear-to-b ${plan.highlight ? 'from-emerald-400 to-transparent' : 'from-stone-300 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
