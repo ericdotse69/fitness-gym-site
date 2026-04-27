@@ -17,9 +17,10 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/programs" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Programs</Link>
-            <Link to="/schedule" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Schedule</Link>
+            <Link to="/classes" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Classes</Link>
             <Link to="/pricing" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Pricing</Link>
-            <Link to="/contact" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Contact</Link>
+            <Link to="/trainers" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Trainers</Link>
+            <Link to="/blog" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Blog</Link>
             <Link to="/join" className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-[0_0_15px_rgba(52,211,153,0.4)]">
               Join Now
             </Link>
@@ -39,10 +40,12 @@ export default function Navbar() {
         <div className="md:hidden bg-stone-950/95 backdrop-blur-xl border-b border-white/10 absolute w-full animate-fade-in-down">
           <div className="px-6 py-6 space-y-4 flex flex-col">
             <Link to="/programs" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Programs</Link>
-            <Link to="/schedule" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Schedule</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Contact</Link>
-            <Link to="/join" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Pricing</Link>
-            <Link to="/pricing" onClick={() => setIsOpen(false)} className="bg-emerald-600 w-full block mt-4 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all text-center">
+            <Link to="/classes" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Classes</Link>
+            <Link to="/trainers" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Trainers</Link>
+            <Link to="/pricing" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Pricing</Link>
+            <Link to="/blog" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Blog</Link>
+            <Link to="/faq" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">FAQ</Link>
+            <Link to="/join" onClick={() => setIsOpen(false)} className="bg-emerald-600 w-full block mt-4 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all text-center">
               Join Now
             </Link>
           </div>

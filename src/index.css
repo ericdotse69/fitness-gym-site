@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* ===== GLOBAL STYLES ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  @apply transition-colors transition-transform transition-shadow;
+}
+
 /* ===== CUSTOM ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {

@@ -1,13 +1,67 @@
 import Footer from '../components/Footer'
 import { useState } from 'react'
+import { CheckCircle, AlertCircle } from 'lucide-react'
+import { trackingEvents } from '../utils/analytics'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    category: 'general',
     subject: '',
     message: ''
   })
+
+  const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const categories = [
+    { value: 'general', label: 'General Inquiry' },
+    { value: 'membership', label: 'Membership Question' },
+    { value: 'classes', label: 'Class Information' },
+    { value: 'billing', label: 'Billing Issue' },
+    { value: 'feedback', label: 'Feedback' },
+    { value: 'other', label: 'Other' }
+  ]
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const validateForm = () => {
+    const newErrors = {}
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required'
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters'
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required'
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address'
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required'
+    } else if (formData.subject.trim().length < 5) {
+      newErrors.subject = 'Subject must be at least 5 characters'
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters'
+    } else if (formData.message.trim().length > 1000) {
+      newErrors.message = 'Message must not exceed 1000 characters'
+    }
+
+    return newErrors
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -15,13 +69,51 @@ export default function Contact() {
       ...prev,
       [name]: value
     }))
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }))
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real application, this would send to a backend
-    window.location.href = `mailto:taysecgardens@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    const newErrors = validateForm()
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // Simulate form submission delay
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // In a real application, this would send to a backend
+      window.location.href = `mailto:taysecgardens@gmail.com?subject=${encodeURIComponent(`[${formData.category.toUpperCase()}] ${formData.subject}`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCategory: ${formData.category}\n\nMessage:\n${formData.message}`)}`
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent. We\'ll get back to you soon.'
+      })
+      setFormData({ name: '', email: '', category: 'general', subject: '', message: '' })
+      setErrors({})
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000)
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or contact us directly.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -39,61 +131,167 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl border border-stone-200 p-10 shadow-sm">
               <h2 className="text-2xl font-semibold mb-8 text-stone-800">Send us a Message</h2>
+
+              {/* Status Messages */}
+              {submitStatus && (
+                <div className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
+                  submitStatus.type === 'success'
+                    ? 'bg-emerald-50 border border-emerald-200'
+                    : 'bg-red-50 border border-red-200'
+                }`}>
+                  {submitStatus.type === 'success' ? (
+                    <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
+                  ) : (
+                    <AlertCircle className="text-red-600 flex-shrink-0" size={20} />
+                  )}
+                  <span className={submitStatus.type === 'success' ? 'text-emerald-700' : 'text-red-700'}>
+                    {submitStatus.message}
+                  </span>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Field */}
                 <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-2">Name</label>
+                  <label className="block text-sm font-medium text-stone-700 mb-2">
+                    Name <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
-                    placeholder="Your name"
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.name
+                        ? 'border-red-500 focus:ring-2 focus:ring-red-500'
+                        : 'border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent'
+                    }`}
+                    placeholder="Your full name"
                   />
+                  {errors.name && (
+                    <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle size={14} />
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
+
+                {/* Email Field */}
                 <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-stone-700 mb-2">
+                    Email <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.email
+                        ? 'border-red-500 focus:ring-2 focus:ring-red-500'
+                        : 'border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent'
+                    }`}
                     placeholder="your@email.com"
                   />
+                  {errors.email && (
+                    <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle size={14} />
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
+
+                {/* Category Field */}
                 <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-2">Subject</label>
+                  <label className="block text-sm font-medium text-stone-700 mb-2">
+                    Category <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition bg-white"
+                  >
+                    {categories.map(cat => (
+                      <option key={cat.value} value={cat.value}>
+                        {cat.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Subject Field */}
+                <div>
+                  <label className="block text-sm font-medium text-stone-700 mb-2">
+                    Subject <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition"
-                    placeholder="How can we help?"
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition ${
+                      errors.subject
+                        ? 'border-red-500 focus:ring-2 focus:ring-red-500'
+                        : 'border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent'
+                    }`}
+                    placeholder="What is this about?"
                   />
+                  {errors.subject && (
+                    <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle size={14} />
+                      {errors.subject}
+                    </p>
+                  )}
                 </div>
+
+                {/* Message Field */}
                 <div>
-                  <label className="block text-sm font-medium text-stone-700 mb-2">Message</label>
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="block text-sm font-medium text-stone-700">
+                      Message <span className="text-red-500">*</span>
+                    </label>
+                    <span className="text-xs text-stone-500">
+                      {formData.message.length}/1000
+                    </span>
+                  </div>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows="5"
-                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition resize-none"
-                    placeholder="Tell us more..."
+                    className={`w-full px-4 py-3 border rounded-lg outline-none transition resize-none ${
+                      errors.message
+                        ? 'border-red-500 focus:ring-2 focus:ring-red-500'
+                        : 'border-stone-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent'
+                    }`}
+                    placeholder="Tell us more about your inquiry..."
                   ></textarea>
+                  {errors.message && (
+                    <p className="text-red-600 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle size={14} />
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
+
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-linear-to-r from-emerald-600 to-teal-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                  disabled={isSubmitting}
+                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+                    isSubmitting
+                      ? 'bg-stone-400 text-white cursor-not-allowed'
+                      : 'bg-linear-to-r from-emerald-600 to-teal-600 text-white hover:shadow-lg active:scale-95'
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {/* Disclaimer */}
+                <p className="text-xs text-stone-500 text-center">
+                  We typically respond within 24 business hours.
+                </p>
               </form>
             </div>
 
@@ -112,8 +310,8 @@ export default function Contact() {
 
                   <div>
                     <h4 className="font-semibold text-stone-800 mb-2">Email</h4>
-                    <a href="mailto:taysecgardens@gmail.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                      taysecgardens@gmail.com
+                    <a href="mailto:pixelxcrip@gmail.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
+                      pixelxcrip@gmail.com
                     </a>
                   </div>
 

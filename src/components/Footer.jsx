@@ -1,3 +1,5 @@
+import NewsletterSignup from './NewsletterSignup'
+
 export default function Footer() {
   return (
     <footer className="bg-linear-to-b from-stone-900 to-stone-950 text-stone-300 relative overflow-hidden border-t border-stone-800/50">
@@ -6,6 +8,11 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-600/5 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-8 py-20">
+        {/* Newsletter */}
+        <div className="mb-20">
+          <NewsletterSignup />
+        </div>
+
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 pb-16 border-b border-stone-800/50">
           
