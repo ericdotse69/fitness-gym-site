@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Testimonials() {
   const testimonials = [
@@ -112,15 +113,15 @@ export default function Testimonials() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-stone-600 mb-6 font-light">Ready to join our community and start your transformation?</p>
-          <a
-            href="/fitness-gym-site/pricing"
+          <Link
+            to="/pricing"
             className="group inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-10 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-600/30 transition-all active:scale-95"
           >
             <span>Start Your Journey</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

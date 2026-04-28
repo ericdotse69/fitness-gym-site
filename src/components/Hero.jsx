@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -40,15 +42,15 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/fitness-gym-site/pricing" className="group bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
+          <Link to="/pricing" className="group bg-linear-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white py-4 px-10 rounded-full text-lg font-semibold transition-all shadow-2xl hover:shadow-emerald-600/40 active:scale-95 flex items-center justify-center gap-2">
             <span>Start Your Journey</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
-          <a href="/fitness-gym-site/programs" className="glass text-white py-4 px-10 rounded-full text-lg font-semibold hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all hover:border-white/40">
+          </Link>
+          <Link to="/programs" className="glass text-white py-4 px-10 rounded-full text-lg font-semibold hover:bg-white/20 backdrop-blur-xl border border-white/20 transition-all hover:border-white/40">
             Learn More
-          </a>
+          </Link>
         </div>
 
         {/* Stats Section */}
