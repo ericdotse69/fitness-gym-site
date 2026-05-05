@@ -3,14 +3,14 @@ import { Home, Search, ArrowRight } from 'lucide-react'
 
 export default function NotFound() {
   const suggestions = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/programs', label: 'Programs', icon: '💪' },
-    { path: '/classes', label: 'Classes', icon: '📅' },
-    { path: '/pricing', label: 'Pricing', icon: '💳' },
-    { path: '/trainers', label: 'Trainers', icon: '👨‍🏫' },
-    { path: '/blog', label: 'Blog', icon: '📚' },
-    { path: '/faq', label: 'FAQ', icon: '❓' },
-    { path: '/contact', label: 'Contact', icon: '📧' }
+    { path: '/', label: 'Home' },
+    { path: '/programs', label: 'Programs' },
+    { path: '/classes', label: 'Classes' },
+    { path: '/pricing', label: 'Pricing' },
+    { path: '/trainers', label: 'Trainers' },
+    { path: '/blog', label: 'Blog' },
+    { path: '/faq', label: 'FAQ' },
+    { path: '/contact', label: 'Contact' }
   ]
 
   return (
@@ -53,7 +53,6 @@ export default function NotFound() {
                 to={suggestion.path}
                 className="group p-4 rounded-lg border border-stone-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all text-center"
               >
-                <div className="text-3xl mb-2">{suggestion.icon}</div>
                 <span className="text-sm font-medium text-stone-700 group-hover:text-emerald-600 transition-colors">
                   {suggestion.label}
                 </span>

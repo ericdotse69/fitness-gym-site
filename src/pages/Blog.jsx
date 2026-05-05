@@ -15,7 +15,7 @@ export default function Blog() {
       date: "2026-04-20",
       excerpt: "Discover how progressive overload works and learn practical strategies to keep challenging your muscles and building strength consistently.",
       content: "Progressive overload is the cornerstone of any effective strength training program. By gradually increasing weight, reps, or intensity, you force your muscles to adapt and grow stronger.",
-      image: "💪",
+      image: "STR",
       readTime: "5 min read"
     },
     {
@@ -26,7 +26,7 @@ export default function Blog() {
       date: "2026-04-18",
       excerpt: "Learn why rest days are just as important as training days and how proper recovery accelerates your fitness goals.",
       content: "Many fitness enthusiasts make the mistake of training hard every day without proper recovery. This article explores the science behind muscle recovery and provides practical recovery strategies.",
-      image: "😴",
+      image: "REC",
       readTime: "7 min read"
     },
     {
@@ -37,7 +37,7 @@ export default function Blog() {
       date: "2026-04-15",
       excerpt: "Master the fundamentals of proper weightlifting form to prevent injuries and maximize muscle engagement.",
       content: "Proper form is the foundation of safe and effective weightlifting. In this guide, we cover the essential principles of form and common mistakes beginners make.",
-      image: "🏋️",
+      image: "FOR",
       readTime: "8 min read"
     },
     {
@@ -48,7 +48,7 @@ export default function Blog() {
       date: "2026-04-12",
       excerpt: "Explore how fitness improves mental health, reduces stress, and enhances overall well-being.",
       content: "Exercise isn't just about physical health. Regular workouts significantly impact mental well-being by releasing endorphins and reducing stress hormones.",
-      image: "🧠",
+      image: "MND",
       readTime: "6 min read"
     },
     {
@@ -59,7 +59,7 @@ export default function Blog() {
       date: "2026-04-10",
       excerpt: "Understand protein requirements, best sources, and timing strategies to optimize muscle growth.",
       content: "Protein is essential for muscle repair and growth. Learn how much protein you need, the best sources, and when to consume it for maximum results.",
-      image: "🥚",
+      image: "NUT",
       readTime: "9 min read"
     },
     {
@@ -70,7 +70,7 @@ export default function Blog() {
       date: "2026-04-08",
       excerpt: "Discover how flexibility training prevents injuries, improves performance, and enhances muscle recovery.",
       content: "Flexibility is often overlooked in fitness routines, but it's crucial for performance and injury prevention. This article covers different flexibility techniques and their benefits.",
-      image: "🧘",
+      image: "FLX",
       readTime: "7 min read"
     },
     {
@@ -81,7 +81,7 @@ export default function Blog() {
       date: "2026-04-05",
       excerpt: "Learn how high-intensity interval training burns fat, builds endurance, and saves time in your busy schedule.",
       content: "High-Intensity Interval Training (HIIT) is one of the most efficient workout formats. In just 20-30 minutes, you can achieve results that traditional cardio takes much longer to deliver.",
-      image: "⚡",
+      image: "HIT",
       readTime: "6 min read"
     },
     {
@@ -92,7 +92,7 @@ export default function Blog() {
       date: "2026-04-02",
       excerpt: "Understand hydration science and learn optimal strategies for staying hydrated during workouts.",
       content: "Proper hydration is critical for performance, recovery, and overall health. Learn how to calculate your hydration needs and maintain optimal fluid intake.",
-      image: "💧",
+      image: "HYD",
       readTime: "5 min read"
     },
     {
@@ -103,7 +103,7 @@ export default function Blog() {
       date: "2026-03-30",
       excerpt: "Create lasting fitness habits with our proven 30-day challenge framework and habit-building strategies.",
       content: "Building a sustainable fitness habit takes strategy and commitment. This guide provides a 30-day framework to establish consistent exercise habits.",
-      image: "🎯",
+      image: "HAB",
       readTime: "8 min read"
     },
     {
@@ -114,7 +114,7 @@ export default function Blog() {
       date: "2026-03-27",
       excerpt: "Compare stretching and foam rolling techniques to optimize your post-workout recovery routine.",
       content: "Both stretching and foam rolling have benefits for recovery. Learn the differences and how to use them together effectively.",
-      image: "🔄",
+      image: "RVY",
       readTime: "6 min read"
     }
   ]
@@ -193,8 +193,10 @@ export default function Blog() {
                   className="bg-white rounded-xl border border-stone-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
                   {/* Image/Icon */}
-                  <div className="h-40 bg-linear-to-br from-emerald-50 to-teal-50 flex items-center justify-center text-5xl group-hover:scale-105 transition-transform duration-300">
-                    {article.image}
+                  <div className="h-40 bg-linear-to-br from-emerald-50 to-teal-50 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-16 h-16 rounded-full bg-linear-to-r from-emerald-600 to-teal-600 flex items-center justify-center text-white text-sm font-bold tracking-widest">
+                      {article.image}
+                    </div>
                   </div>
 
                   {/* Content */}

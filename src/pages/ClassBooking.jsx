@@ -1,8 +1,11 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer'
-import { Calendar, Clock, User, Users, AlertCircle } from 'lucide-react'
+import { Calendar, Clock, User, Users, AlertCircle, ArrowRight } from 'lucide-react'
 
 export default function ClassBooking() {
+  const navigate = useNavigate()
+  
   // Sample classes data - in a real app, this would come from a backend
   const classesData = [
     // Iron Strength Classes
@@ -29,6 +32,21 @@ export default function ClassBooking() {
   const [bookedClasses, setBookedClasses] = useState([])
   const [selectedProgram, setSelectedProgram] = useState("All")
   const [selectedDate, setSelectedDate] = useState(null)
+
+  // Load bookings from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('bookedClasses')
+    if (saved) {
+      setBookedClasses(JSON.parse(saved))
+    }
+  }, [])
+
+  // Save bookings to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('bookedClasses', JSON.stringify(bookedClasses))
+    // Also save classesData for checkout page
+    localStorage.setItem('classesData', JSON.stringify(classesData))
+  }, [bookedClasses])
 
   // Get unique dates from classes
   const uniqueDates = useMemo(() => {
@@ -229,7 +247,7 @@ export default function ClassBooking() {
                                 : 'bg-linear-to-r from-emerald-600 to-teal-600 text-white hover:shadow-lg'
                             }`}
                           >
-                            {isBooked ? '✓ Booked' : 'Book Class'}
+                            {isBooked ? 'Booked' : 'Book Class'}
                           </button>
                         )}
                         
@@ -274,17 +292,24 @@ export default function ClassBooking() {
                   )
                 })}
               </div>
-              <div className="mt-6 text-center">
-                <p className="text-stone-600 text-sm mb-4">Ready to start your fitness journey?</p>
+              <div className="mt-6 grid grid-cols-2 gap-4">
                 <a
-                  href="/fitness-gym-site/pricing"
-                  className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                  href="javascript:void(0)"
+                  onClick={() => navigate('/pricing')}
+                  className="inline-flex items-center justify-center gap-2 bg-stone-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-stone-700 transition-all"
                 >
-                  Become a Member
+                  Browse Memberships
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
+                <button
+                  onClick={() => navigate('/booking-checkout')}
+                  className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
+                >
+                  Proceed to Checkout
+                  <ArrowRight size={20} />
+                </button>
               </div>
             </div>
           )}

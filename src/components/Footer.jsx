@@ -44,8 +44,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href="/fitness-gym-site/" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Home</a></li>
               <li><a href="/fitness-gym-site/programs" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Programs</a></li>
+              <li><a href="/fitness-gym-site/classes" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Classes</a></li>
               <li><a href="/fitness-gym-site/pricing" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Pricing</a></li>
-              <li><a href="/fitness-gym-site/schedule" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Schedule</a></li>
               <li><a href="/fitness-gym-site/contact" className="text-stone-400 hover:text-emerald-400 transition-colors font-light">Contact</a></li>
             </ul>
           </div>

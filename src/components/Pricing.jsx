@@ -120,12 +120,12 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <Link to="/fitness-gym-site/join" className={`block w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 active:scale-95 text-center ${
+                <Link to="/classes" className={`block w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 active:scale-95 text-center ${
                   plan.highlight 
                     ? "bg-white text-emerald-900 hover:bg-emerald-50 shadow-lg" 
                     : "bg-linear-to-r from-emerald-50 to-teal-50 text-emerald-700 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200"
                 }`}>
-                  Get Started
+                  Choose Classes
                 </Link>
 
                 {/* Side accent */}

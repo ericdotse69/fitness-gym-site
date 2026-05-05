@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { Award, Heart, Zap } from 'lucide-react'
 
@@ -16,7 +17,7 @@ export default function Trainers() {
         "Certified in Olympic Lifting"
       ],
       focus: "Maximum Strength & Hypertrophy",
-      image: "KO"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=KwakuOsei"
     },
     {
       name: "Ama Mensah",
@@ -31,7 +32,7 @@ export default function Trainers() {
         "Daily Meditation Guide"
       ],
       focus: "Recovery, Flexibility & Mindfulness",
-      image: "AM"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=AmaMensah"
     },
     {
       name: "Kofi Ampadu",
@@ -46,7 +47,7 @@ export default function Trainers() {
         "Led 200+ outdoor training sessions"
       ],
       focus: "Cardiovascular Endurance & Agility",
-      image: "KA"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=KofiAmpadu"
     },
     {
       name: "Ekua Boateng",
@@ -61,7 +62,7 @@ export default function Trainers() {
         "Member Success Rate: 98%"
       ],
       focus: "Balanced Training & Member Success",
-      image: "EB"
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=EkuaBoateng"
     }
   ]
 
@@ -111,8 +112,12 @@ export default function Trainers() {
 
                 {/* Avatar */}
                 <div className="relative px-8 pb-8">
-                  <div className="absolute -top-12 left-8 w-24 h-24 rounded-full bg-linear-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold text-2xl border-4 border-white shadow-lg">
-                    {trainer.image}
+                  <div className="absolute -top-12 left-8 w-24 h-24 rounded-full bg-white flex items-center justify-center border-4 border-white shadow-lg overflow-hidden">
+                    <img 
+                      src={trainer.avatar} 
+                      alt={trainer.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Content */}
@@ -140,7 +145,7 @@ export default function Trainers() {
                       <ul className="space-y-2">
                         {trainer.certifications.map((cert, i) => (
                           <li key={i} className="text-xs text-stone-600 flex items-start gap-2">
-                            <span className="text-emerald-500 mt-1">✓</span>
+                            <span className="text-emerald-600 mt-1 font-bold">•</span>
                             {cert}
                           </li>
                         ))}
@@ -156,7 +161,7 @@ export default function Trainers() {
                       <ul className="space-y-2">
                         {trainer.achievements.map((achievement, i) => (
                           <li key={i} className="text-xs text-stone-600 flex items-start gap-2">
-                            <span className="text-amber-500 mt-1">⭐</span>
+                            <span className="text-amber-600 mt-1 font-bold">+</span>
                             {achievement}
                           </li>
                         ))}
@@ -164,12 +169,12 @@ export default function Trainers() {
                     </div>
 
                     {/* CTA */}
-                    <a
-                      href={`mailto:${trainer.email}?subject=Personal Training Inquiry`}
+                    <Link
+                      to="/classes"
                       className="block w-full py-3 text-center bg-linear-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all active:scale-95"
                     >
-                      Book a Session
-                    </a>
+                      Book a Class
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -180,17 +185,17 @@ export default function Trainers() {
           <div className="mt-16 bg-linear-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 p-8 text-center">
             <h3 className="text-2xl font-semibold text-stone-800 mb-3">Ready to transform with expert guidance?</h3>
             <p className="text-stone-600 mb-6 font-light max-w-2xl mx-auto">
-              Our trainers offer personal training sessions tailored to your goals. Connect with your perfect fit today!
+              Our trainers offer personalized classes tailored to your goals. Book your first session today!
             </p>
-            <a
-              href="/fitness-gym-site/contact"
+            <Link
+              to="/classes"
               className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all"
             >
-              Get Started
+              Browse Classes
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

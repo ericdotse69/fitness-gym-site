@@ -21,7 +21,7 @@ export default function Navbar() {
             <Link to="/pricing" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Pricing</Link>
             <Link to="/trainers" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Trainers</Link>
             <Link to="/blog" className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium">Blog</Link>
-            <Link to="/join" className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+            <Link to="/pricing" className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-[0_0_15px_rgba(52,211,153,0.4)]">
               Join Now
             </Link>
           </div>
@@ -45,7 +45,7 @@ export default function Navbar() {
             <Link to="/pricing" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Pricing</Link>
             <Link to="/blog" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">Blog</Link>
             <Link to="/faq" onClick={() => setIsOpen(false)} className="text-stone-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-widest font-medium block">FAQ</Link>
-            <Link to="/join" onClick={() => setIsOpen(false)} className="bg-emerald-600 w-full block mt-4 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all text-center">
+            <Link to="/pricing" onClick={() => setIsOpen(false)} className="bg-emerald-600 w-full block mt-4 hover:bg-emerald-500 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all text-center">
               Join Now
             </Link>
           </div>
